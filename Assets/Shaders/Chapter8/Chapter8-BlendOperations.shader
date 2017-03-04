@@ -1,8 +1,9 @@
-﻿Shader "Unity Shaders Book/Chapter 8/Blend Operations 0" {
+Shader "Unity Shaders Book/Chapter 8/Blend Operations 0" {
 	Properties {
 		_Color ("Color Tint", Color) = (1, 1, 1, 1)
 		_MainTex ("Main Tex", 2D) = "white" {}
 		_AlphaScale ("Alpha Scale", Range(0, 1)) = 1
+		_Text("test", 2D) = "white" {}
 	}
 	SubShader {
 		Tags {"Queue"="Transparent" "IgnoreProjector"="True" "RenderType"="Transparent"}
@@ -13,6 +14,8 @@
 			ZWrite Off
 			
 			Blend SrcAlpha OneMinusSrcAlpha, One Zero
+			
+			
 			
 			CGPROGRAM
 			
@@ -54,6 +57,7 @@
 			
 			ENDCG
 		}
+	
 	} 
 	FallBack "Transparent/VertexLit"
 }

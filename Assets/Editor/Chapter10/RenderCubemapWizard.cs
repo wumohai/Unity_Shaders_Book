@@ -11,7 +11,6 @@ public class RenderCubemapWizard : ScriptableWizard {
 		helpString = "Select transform to render from and cubemap to render into";
 		isValid = (renderFromPosition != null) && (cubemap != null);
 	}
-	
 	void OnWizardCreate () {
 		// create temporary camera for rendering
 		GameObject go = new GameObject( "CubemapCamera");
